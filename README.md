@@ -2,11 +2,6 @@
 
 A simple offline notes app built with Flutter using MVVM architecture, Material 3 theming, and local persistence.
 
-## Screenshots
-
-| Light Mode | Dark Mode |
-| :---: | :---: |
-| ![Light Mode](screenshots/light_mode.png) | ![Dark Mode](screenshots/dark_mode.png) |
 
 ## Setup
 
