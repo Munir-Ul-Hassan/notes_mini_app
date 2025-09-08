@@ -2,6 +2,12 @@
 
 A simple offline notes app built with Flutter using MVVM architecture, Material 3 theming, and local persistence.
 
+## Screenshots
+
+| Light Mode | Dark Mode |
+| :---: | :---: |
+| ![Light Mode](screenshots/light_mode.png) | ![Dark Mode](screenshots/dark_mode.png) |
+
 ## Setup
 
 1. **Clone the repo:**
@@ -36,7 +42,15 @@ A simple offline notes app built with Flutter using MVVM architecture, Material 
 
 ## Features
 
-- Add, edit, delete notes
-- Undo delete via SnackBar
-- Theme toggle (light/dark)
-- Local persistence
+- **Notes:**
+    - Create, edit, and delete notes.
+    - Notes are stored locally on the device, so they are available offline.
+    - A beautiful and intuitive UI for managing notes.
+    - Undo delete functionality to prevent accidental data loss.
+- **Posts:**
+    - View a list of posts from a remote API.
+    - The app fetches data from a placeholder API and displays it in a clean and readable format.
+    - The UI is designed to be responsive and adapt to different screen sizes.
+- **Settings:**
+    - Change the theme of the app between light and dark mode.
+    - The app uses Material 3 theming to provide a modern and consistent look and feel.
