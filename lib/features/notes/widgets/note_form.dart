@@ -42,28 +42,55 @@ class _NoteFormState extends State<NoteForm> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            Text(
+              widget.initialTitle == null ? 'Add Note' : 'Edit Note',
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
+            const SizedBox(height: 16),
             TextFormField(
               initialValue: _title,
-              decoration: const InputDecoration(labelText: 'Title'),
+              decoration: InputDecoration(
+                labelText: 'Title',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                prefixIcon: const Icon(Icons.title),
+              ),
               validator: (value) => (value == null || value.trim().isEmpty)
-                  ? 'Title cannot be empty' : null,
+                  ? 'Title cannot be empty'
+                  : null,
               onChanged: (value) => _title = value,
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 16),
             TextFormField(
               initialValue: _description,
-              decoration: const InputDecoration(labelText: 'Description'),
-              maxLines: 3,
+              decoration: InputDecoration(
+                labelText: 'Description',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                prefixIcon: const Icon(Icons.description),
+              ),
+              maxLines: 5,
               onChanged: (value) => _description = value,
             ),
             const SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: () {
-                if (_formKey.currentState!.validate()) {
-                  widget.onSave(_title.trim(), _description.trim());
-                }
-              },
-              child: const Text('Save'),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    widget.onSave(_title.trim(), _description.trim());
+                  }
+                },
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+                child: const Text('Save'),
+              ),
             ),
           ],
         ),
